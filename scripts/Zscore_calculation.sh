@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 ##### Parameters
+bin_dir="."
 gwas_summary=$1;
 outputdir=$2
 
@@ -16,7 +17,7 @@ z=$(echo $line |tr " " "\n"|grep -inx 'z\|zscore\|z_score\|z.score\|stat'| cut -
 ###### estimate z score if it is not exist
 if [[ $z -eq "" ]];
 then
-  Rscript --vanilla Zscore_calculation.R ${gwas_summary} ${outputdir} ${gwas_basename}
+  Rscript --vanilla ${bin_dir}/Zscore_calculation.R ${gwas_summary} ${outputdir} ${gwas_basename}
 else
   cp ${gwas_summary} ${outputdir}/
 fi
