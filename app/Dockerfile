@@ -28,4 +28,6 @@ RUN apk add --no-cache dos2unix
 RUN dos2unix pipeline_scripts/Zscore_calculation.sh
 RUN chmod 775 pipeline_scripts/Zscore_calculation.sh
 
+RUN npm run build
+
 CMD [ "npm", "run", "start:prod" ]
