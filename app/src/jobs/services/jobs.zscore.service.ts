@@ -7,10 +7,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { CreateJobDto } from '../dto/create-job.dto';
-import {
-  ZscoreJobsModel,
-  JobStatus,
-} from '../models/zscore.jobs.model';
+import { ZscoreJobsModel, JobStatus } from '../models/zscore.jobs.model';
 import { ZscoreModel } from '../models/zscore.model';
 import { ZscoreJobQueue } from '../../jobqueue/queue/zscore.queue';
 import { UserDoc } from '../../auth/models/user.model';
@@ -157,7 +154,7 @@ export class JobsZscoreService {
 
   async getJobByID(id: string, user: UserDoc) {
     const job = await ZscoreJobsModel.findById(id)
-      .populate('imputation_params')
+      .populate('zscore_params')
       .populate('user')
       .exec();
 
@@ -176,7 +173,7 @@ export class JobsZscoreService {
 
   async getJobByIDNoAuth(id: string) {
     const job = await ZscoreJobsModel.findById(id)
-      .populate('imputation_params')
+      .populate('zscore_params')
       .populate('user')
       .exec();
 
