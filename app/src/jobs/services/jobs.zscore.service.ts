@@ -16,13 +16,13 @@ import {
   findAllJobs,
   removeManyUserJobs,
   removeUserJob,
-  fileSizeMb,
   deleteFileorFolder,
 } from '@cubrepgwas/pgwascommon';
 import { validateInputs } from './service.util';
 
 //production
-const testPath = '/local/datasets/pgwas_test_files/eqtlcoloc/CAD_GWAS.txt';
+const testPath =
+  '/local/datasets/pgwas_test_files/zscore/UKB_bv_height_SMR_0.05.txt';
 //development
 // const testPath = '/local/datasets/data/eqtlcoloc/CAD_GWAS.txt';
 // const testPath = '/local/datasets/data/eqtl/UKB_bv_height_SMR_0.05.txt';
