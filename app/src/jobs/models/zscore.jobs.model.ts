@@ -60,7 +60,6 @@ const ZscoreJobSchema = new mongoose.Schema<ZscoreJobsDoc, JobsModel>(
     inputFile: {
       type: String,
       required: [true, 'Please add a input filename'],
-      unique: true,
       trim: true,
     },
     zscoreFile: {
